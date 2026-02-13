@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ♡</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- PIN GATE SCREEN -->
+    <div id="pinGate" class="pin-gate active">
+        <div class="clouds">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+        <div class="pin-card">
+            <div class="heart-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </div>
+            <h1 class="question">When did I confess to you?</h1>
+            <p class="hint">For your eyes only</p>
+            
+            <div class="pin-input-container">
+                <input type="text" 
+                       inputmode="numeric" 
+                       maxlength="1" 
+                       class="pin-digit" 
+                       aria-label="First digit of PIN"
+                       data-index="0">
+                <input type="text" 
+                       inputmode="numeric" 
+                       maxlength="1" 
+                       class="pin-digit" 
+                       aria-label="Second digit of PIN"
+                       data-index="1">
+                <input type="text" 
+                       inputmode="numeric" 
+                       maxlength="1" 
+                       class="pin-digit" 
+                       aria-label="Third digit of PIN"
+                       data-index="2">
+                <input type="text" 
+                       inputmode="numeric" 
+                       maxlength="1" 
+                       class="pin-digit" 
+                       aria-label="Fourth digit of PIN"
+                       data-index="3">
+            </div>
+            
+            <div class="error-message" role="alert" aria-live="polite"></div>
+            <div class="attempts-counter">Attempts: <span id="attemptsCount">0</span>/3</div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="mainContent" class="main-content">
+        <div class="floating-hearts">
+            <div class="floating-heart"></div>
+            <div class="floating-heart"></div>
+            <div class="floating-heart"></div>
+        </div>
+
+        <header class="site-header">
+            <h1 class="site-title">Literally Us Twin</h1>
+            <div class="decorative-line"></div>
+        </header>
+
+        <!-- PHOTO GALLERY -->
+        <section class="gallery" aria-label="Photo gallery">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Photos will be injected by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ENVELOPE -->
+        <section class="envelope-section" aria-label="Special message">
+            <button class="envelope-container" 
+                    id="envelopeBtn" 
+                    aria-label="Open letter"
+                    aria-expanded="false">
+                <div class="envelope">
+                    <div class="envelope-back"></div>
+                    <div class="envelope-front"></div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-seal">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="envelope-label">Open Letter</p>
+            </button>
+        </section>
+
+        <footer class="site-footer">
+            <p>Made with Love <br> -Gerald ♡</p>
+        </footer>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <button class="lightbox-close" aria-label="Close photo viewer">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous photo">‹</button>
+        <button class="lightbox-next" aria-label="Next photo">›</button>
+        <img src="" alt="" class="lightbox-image">
+        <div class="lightbox-counter"></div>
+    </div>
+
+    <!-- MESSAGE MODAL -->
+    <div id="messageModal" class="message-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close message">&times;</button>
+            <div class="confetti-container" aria-hidden="true"></div>
+            <div class="modal-body">
+                <h2 id="modalTitle">To My Love</h2>
+                <div class="modal-message" id="modalMessage">
+                    <!-- Message will be injected by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
